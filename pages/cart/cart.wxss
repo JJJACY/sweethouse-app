@@ -1,0 +1,4 @@
+/* pages/cart/cart.js.wxss */
+.cart-list{
+  width: 100%;
+}

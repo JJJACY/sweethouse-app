@@ -1,0 +1,74 @@
+.wrapper {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+}
+.horizontal-scroll {
+  position: relative;
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: green;
+  margin-right: 40rpx;
+  display: inline-block;
+  text-align: center;
+}
+.horizontal-scroll text {
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+}
+.content{
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  word-break:break-all;
+  background: #f7f7f7;
+}
+.product-list{
+  display: flex;
+  height: 100%;
+  font-size: 32rpx;
+  font-weight: 200;
+  line-height: 32rpx;
+}
+.product-item{
+  padding: 30rpx 30rpx 0;
+  width: 100%;
+  height: 450rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  border-right: 2rpx solid #f7f7f7;
+}
+.product-image{
+  width: 314rpx;
+  height: 314rpx;
+}
+.img{
+  width: 314rpx;
+  height: 314rpx;
+}
+.name{
+  margin: 12rpx 0 8rpx;
+  padding-left: 20rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 24rpx;
+  height: 40rpx;
+  text-align: left;
+
+}
+.price{
+  margin-right: 6rpx;
+  font-size: 24rpx;
+  color: #e93b3d;
+  line-height: 20rpx;
+  text-align: left;
+  padding-left: 20rpx;
+}
+.num{
+  display: inline-block;
+  font-size: 32rpx;
+}

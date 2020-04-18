@@ -1,0 +1,128 @@
+/* pages/orderDetail/orderDetail.wxss */
+.order{
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+.order_state{
+  background-image: linear-gradient(90deg,#f66d70,#e93b3d);
+  color: #fff;
+  padding: 24rpx 20rpx;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  position: relative;
+}
+.state_suc{
+  position: absolute;
+  top: 50rpx;
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  background-image: url(https://wq.360buyimg.com/fd/h5/wxsq_dev/order/images/sprite_order_status_icon@2x_4e93947c.png);
+  background-size: 81rpx 81rpx;
+  background-repeat: no-repeat;
+}
+.state_cont{
+  padding-left: 50rpx;
+  z-index: 5;
+}
+.state_text{
+  line-height: 48rpx;
+    position: relative;
+}
+.text{
+  font-family: PingFangSC-Semibold;
+  font-size: 32rpx;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.userinfo{
+  display: flex;
+  padding: 22rpx 20rpx 24rpx;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.located{
+  padding-top: 20rpx;
+}
+.located-img{
+  width: 32rpx;
+  height: 32rpx;
+}
+.user-text{
+  padding-left: 10rpx;
+}
+.user-name{
+  font-size: 28rpx;
+  line-height: 41rpx;
+  color: #333;
+}
+.user-tip{
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #999;
+}
+.goods{
+  display: flex;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 60rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.goods-image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.img{
+  width: 150rpx;
+  height: 150rpx;
+}
+.goods-text{
+  padding-left: 20rpx;
+  overflow: hidden;
+}
+.texts{
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #333;
+  word-break: break-all;
+}
+.price{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  line-height: 48rpx;
+  font-size: 24rpx;
+}
+.price-num{
+  color: #f2270c;
+  font-family: JDZH-Regular;
+}
+.count{
+  float: right;
+  color: #999;
+  float: right;
+}
+.order-detail{
+  padding: 24rpx 20rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+.detail-text{
+  padding-top: 6rpx;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    position: relative;
+}
+.detail-tip{
+  display: inline-block;
+  color: #999;
+}
+.detail-num{
+  display: inline-block;
+  padding-left: 10rpx;
+  color: #151515;
+}

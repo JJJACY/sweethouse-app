@@ -1,0 +1,27 @@
+<!--pages/goods/goods.wxml-->
+<view class="container">
+  <view class="goods">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="goods-detail">
+      <view class="price">
+        ¥<view class="price-num">138</view>
+      </view>
+      <view class="descript">
+        <view class="descirpt-text">
+          森劲威 男鞋子潮鞋2020春季新款小白鞋男士鞋学生百搭潮流休闲鞋皮鞋网红韩版板鞋 米沙色【偏小】 41
+        </view>
+      </view>
+    </view>
+    <view class="content">
+     富文本区
+    </view>
+    
+  </view>
+</view>

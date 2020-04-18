@@ -1,0 +1,112 @@
+/* addressEdit.wxss */
+.formList{
+  width: 100%;
+}
+.formitem{
+  width: 100%;
+  padding: 24rpx 20rpx 24rpx  150rpx;
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid  #cbcbcb;
+}
+.formitem-info{
+  width: 130rpx;
+  line-height: 1;
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.formitem-input{
+  height: 40rpx;
+  line-height: normal;
+  border: 0 none;
+  font-size: 28rpx;
+  width: 100%;
+  -webkit-appearance: none;
+  vertical-align: top;
+  color: #333;
+}
+.detail{
+  position: relative;
+  padding-right: 70rpx;
+  padding: 24rpx 20rpx 24rpx  150rpx;
+  border-bottom: 2rpx solid  #cbcbcb;
+}
+.tit{
+  width: 130rpx;
+  line-height: 1;
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.detail-input{
+  width: 540rpx;
+  height: 82rpx;
+  line-height: 1.5;
+  border: none;
+  resize: none;
+  font-size: 28rpx;
+  z-index: 999;
+}
+.circle{
+  position: absolute;
+  top: 32rpx;
+  right: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #ccc;
+  border-radius: 15rpx;
+  z-index: auto;
+}
+.circle::before{
+  position: absolute;
+  content: "";
+  width: 2rpx;
+  height: 14rpx;
+  top: 8rpx;
+  left: 14rpx;
+  rotate: -45deg;
+  background-color: #fff;
+}
+.circle:after{
+  position: absolute;
+  content: "";
+  width: 2rpx;
+  height: 14rpx;
+  top: 8rpx;
+  left: 14rpx;
+  rotate: 45deg;
+  background-color: #fff;
+}
+.button-confirm{
+  margin: 20rpx;
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(135deg,#f2140c,#f2270c 70%,#f24d0c);
+}
+.button-del{
+  margin: 20rpx;
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  color: #666666;
+  border: 2px solid #ccc;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0,0,0,.05);
+  z-index: 1;
+}

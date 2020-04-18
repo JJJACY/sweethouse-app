@@ -1,0 +1,51 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="container">
+  <view class="order">
+    <view class="order_state">
+      <view class="state_suc"></view>
+      <view class="state_cont">
+        <view class="state_text">
+          <view class="text">已完成</view>
+        </view>
+        <view class="state_tip">您的订单已签收，祝您购物愉快</view>
+      </view>
+    </view>
+    <view class="userinfo">
+      <view class="located">
+        <image class="located-img" src="./../../image/located.png"></image>
+      </view>
+      <view class="user-text">
+        <view class="user-name">唐宋 155****2496</view>
+        <view class="user-tip">广东广州市增城区城区增城区健身路文明小区停车场</view>
+      </view>
+    </view>
+    <view class="wihte"></view>
+    <view class="order-goods">
+      <view class="goods">
+        <view class="goods-image">
+          <image class="img" 
+          mode="aspectFill	"
+          src="//img10.360buyimg.com/mobilecms/s234x234_jfs/t1/59868/16/15358/195003/5dccef00Ee32be686/eeefaa39bbff36d9.jpg!q70.dpg.webp">
+          </image>
+        </view>
+        <view class="goods-text">
+          <view class="texts"> 神奇牙刷 高密度刷毛超细软毛牙刷（4支装）</view>
+          <view class="price">
+            <view class="price-num">¥29.00</view>
+            <view class="count">✖️ 1</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="order-detail">
+      <view class="detail-text verse">
+        <view class="detail-tip verse-num">订单编号:</view>
+        <view class="detail-num num">106710217573</view>
+      </view>
+      <view class="detail-text time">
+        <view class="detail-tip">下单时间:</view>
+        <view class="detail-num">2019-11-28 09:09:10</view>
+      </view>
+    </view>
+  </view>
+</view>

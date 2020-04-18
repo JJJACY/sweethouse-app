@@ -1,0 +1,20 @@
+<view class="container">
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{items}}" wx:key="index">
+      <checkbox class="box" checked="{{item.checked}}"/>
+      <view class="userinfo">
+        <view class="info">
+          <view class="username">唐山</view>
+          <view class="usertel">15580888188</view>
+        </view>
+        <view class="useraddress">
+          <view class="default" wx:if="{{item.checked}}">默认</view>
+          <view class="address">广东广州市增城区城区增城区健身路文明小区停车场</view>
+          <!-- <view class="edit">编辑</view> -->
+        </view>
+      </view>
+      <view class="edit" bindtap="handleEdit">编辑</view>
+    </label>
+    <view class="create" bindtap="handleCreate">新增地址</view>
+  </checkbox-group>
+</view>

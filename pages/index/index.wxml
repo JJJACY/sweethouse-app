@@ -1,4 +1,28 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="header">进来</view>
+  <view class="header">
+    <van-search
+      value="{{ value }}"
+      placeholder="请输入搜索关键词"
+      show-action
+      bind:search="onSearch"
+      bind:cancel="onCancel"
+      field-class	=" border-radius: 24px;"
+    />
+  </view>
+  <view class="body">
+    <view class="swiper-container">
+      <swiper
+        autoplay 
+        circular
+        duration="1000"
+        indicator-dots>
+        <swiper-item class="banner-container" wx:for="{{bannerData}}" wx:key="index">
+          <navigator class="banner" >
+            <image class="banner-image" mode="aspectFill" src="{{item.image_url}}"></image>
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
 </view>

@@ -1,0 +1,37 @@
+<!--classify.wxml-->
+<view class="container">
+  <scroll-view 
+    class='wrapper' 
+    scroll-x="true" 
+    scroll-into-view="wrapper-item-{{classifyId}}">
+    <view 
+      class='horizontal-scroll' 
+      wx:for="{{classifyData}}" 
+      wx:key="index" 
+      bindtap="handleclick"
+      data-id="{{item.id}}"
+      >
+      <text>{{item.name}}</text>
+      <view class="content content-{{item.id}}">
+        <view class="product-list">
+          <!-- <view class="product-item">
+            <view class="product-image">
+              <image class="img" >src="{item.image_Url}"</image>
+            </view>
+            <view class="name"></view>
+          </view> -->
+          <view class="product-item" wx:for="{{productData}}"  wx:key="index" bindtap="handleSingle">
+            <view class="product-image">
+              <image class="img" src="{{item.image_Url}}"></image>
+            </view>
+            <view class="name">{{item.name}}</view>
+            <view class="price">$:
+              <view class="num">{{item.price_discount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents":{
+    "van-search": "../../miniprogram_npm/@vant/weapp/search"
+  },
+  "navigationBarTitleText": "糖果屋"
 }

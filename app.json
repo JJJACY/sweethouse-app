@@ -1,13 +1,51 @@
 {
-  "pages":[
+  "pages": [ "pages/classify/classify",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/order/order",
+    "pages/orderDetail/orderDetail",
+    "pages/cart/cart",
+    "pages/address/address",
+   
+    "pages/personal/personal",
+    "pages/addressEdit/addressEdit",
+    
+    "pages/goods/goods"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "糖果屋",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#f2270c",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/selectindex.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "image/classify.png",
+        "selectedIconPath": "image/selectclassify.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "image/cart.png",
+        "selectedIconPath": "image/selectcart.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "image/own.png",
+        "selectedIconPath": "image/selectown.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

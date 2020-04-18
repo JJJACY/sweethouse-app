@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="header">
+    <view class="person-info">
+      <view class="headimage">
+        <image class="img" src="https://tvax2.sinaimg.cn/crop.0.0.996.996.180/006wxslJly8g8h2xm7dy4j30ro0rowgy.jpg?KID=imgbed,tva&Expires=1587139694&ssig=7GIsx%2B00WW"></image>
+      </view>
+      <view class="name-info">
+        <view class="name">唐宋爱吃鱼</view>
+        <view class="name-text">你好啊,XXX</view>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <navigator class="weblink myorder" open-type="navigate" url="../../pages/order/order">我的订单</navigator>
+    <navigator class="weblink myaddress" open-type="navigate" url="../../pages/address/address">我的地址</navigator>
+    <navigator class="weblink contact"></navigator>
+  </view>
+</view>
