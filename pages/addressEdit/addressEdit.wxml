@@ -3,15 +3,19 @@
   <view class="formList">
     <view class="formitem">
       <view class="formitem-info">姓名</view>
-      <input class="formitem-input" placeholder="输入一下"></input>
+      <input class="formitem-input" placeholder="输入一下" bind:change="changeName"></input>
     </view>
     <view class="formitem">
       <view class="formitem-info">联系方式</view>
-      <input class="formitem-input" placeholder="输入一下"></input>
+      <input class="formitem-input" placeholder="输入一下" bind:change="changeTel"></input>
     </view>
     <view class="formitem">
       <view class="formitem-info">所在地区</view>
-      <input class="formitem-input" placeholder="输入一下"></input>
+      <input class="formitem-input" placeholder="输入一下" bind:change="changePosition"></input>
+    </view>
+    <view class="formitem">
+      <view class="formitem-info">默认</view>
+      <input class="formitem-input" placeholder="输入0或者1[0:默认,1:非默认]" bind:change="changeDefault"></input>
     </view>
     <view class="detail">
       <view class="tit">详细地址</view>
@@ -22,6 +26,5 @@
       <view class="circle" bindtap="handleclear"></view>
     </view>
     <view class="button-confirm" bindtap="handleConfirm">确认</view>
-    <view class="button-del" bindtap="handledelete">删除收货地址</view>  
   </view>
 </view>

@@ -1,71 +1,123 @@
 // pages/goods/goods.js
+import API from './../../global/request/api.js';
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    banner:[],
+    detail:[],
+    skus:[],
+    goodsnumber:'',
     indicatorDots: true,
     vertical: true,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    id:'',
+    show: false,
+    overlay: true
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    console.log(options)
+    let id = options.id;
+    console.log(id)
+    this.setData({
+      id: id
+    })
+    this.getData()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  getData(){
+    let id = this.data.id
+    console.log(id)
+    wx.request({
+      url: API.wxProduct+'/'+id,
+      success:res=>{
+        console.log(res)
+        this.setData({
+          banner: res.data.data.goods.banner,
+          detail: res.data.data.goods,
+          skus: res.data.data.sku[0]
+        })
+      },
+      fail:err=>{
+        console.log(err)
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handldmovecart(){
+    wx.switchTab({
+      url:"../../pages/cart/cart"
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleaddcart(){
+    this.setData({
+      show: true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleclose(e){
+    this.setData({
+      show: false,
+      overlay: false
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handlebuy(){
+    console.log(456)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handlechange(e){
+    this.setData({
+      goodsnumber: e.detail
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handlesubmit(){
+    if(this.data.skus.status !== "0"){
+      wx.showToast({
+        title:'该物品已下架',
+        icon:'none',
+        duration: 2000
+      })
+    }
+    if(this.data.skus.stock <= "0" ){
+      wx.showToast({
+        title: '该商品库存不足，正在加急补货中',
+        icon: 'none',
+        duration: 2000
+      })
+    }
+    let user_id = app.globalData.user_id
+    if(!user_id){
+      wx.showToast({
+        title:'请先登录',
+        icon:'none',
+        duration: 2000
+      })
+    }
+    wx.showLoading({
+      title:'加载中'
+    })
+    wx.request({
+      url: API.wxCart ,
+      method: 'POST',
+      data:{
+        user_id,
+        skus_id: this.data.skus.id,
+        goodsnumber: this.data.goodsnumber
+      },
+      success: res=>{
+        console.log(res)
+        if(res.data.code === 200){
+          wx.hideLoading();
+        }else{
+          console.log(res.data.message)
+          wx.hideLoading()
+        }
+      },
+      fail: err=>{
+        console.log(err)
+        wx.hideLoading()
+      }
+    })
+    wx.switchTab({
+      url:"../../pages/cart/cart"
+    })
   }
+  
 })

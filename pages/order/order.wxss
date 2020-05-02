@@ -1,10 +1,15 @@
 /* pages/order/order.wxss */
+.container{
+  display: block;
+  background-color: #f7f7f7; 
+}
 .order-list{
   width: 100%; 
   height: 100%;
   background-color: #f7f7f7; 
 }
 .order-item{
+  height: 250rpx;
   margin: 30rpx;
   padding: 20rpx;
   background: #fff;
@@ -25,6 +30,8 @@
   color: #999;
 }
 .status{
+  text-align: right;
+  width: 200rpx;
   float: right;
 }
 
@@ -34,11 +41,13 @@
   height: 150rpx;
 }
 .price{
-  width: 100%;
-  
+  display: flex;
+  width: 100%; 
+  margin-bottom: 20rpx;
 }
 .count{
   width: 60%;
+  margin-right: 20rpx;
   display: inline-block;
   text-align: right;
   font-size: 24rpx;

@@ -24,5 +24,16 @@
         </swiper-item>
       </swiper>
     </view>
+    <view class="goods-list" >
+      <view class="goods-item" wx:for="{{productData}}" wx:key="index">
+        <view class="goods-image">
+          <image class="img" src="{{item.image_Url}}"></image>
+        </view>
+        <view class="goods-text">
+          <view class="text">{{item.name}}</view>
+          <view class="price">{{item.price_discount}}</view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>

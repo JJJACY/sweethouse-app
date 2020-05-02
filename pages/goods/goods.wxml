@@ -1,27 +1,91 @@
 <!--pages/goods/goods.wxml-->
 <view class="container">
-  <view class="goods">
-    <swiper indicator-dots="{{indicatorDots}}"
+  <view class="goods" >
+    <swiper indicator-dots="{{indicatorDots}}" 
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item>
-          <view class="swiper-item {{item}}"></view>
+      <block>
+        <swiper-item wx:for="{{banner}}" wx:key="index">
+          <image class="swiper-item" mode="aspectFill" src="{{item.url}}"></image>
         </swiper-item>
       </block>
     </swiper>
     <view class="goods-detail">
       <view class="price">
-        ¥<view class="price-num">138</view>
-      </view>
-      <view class="descript">
-        <view class="descirpt-text">
-          森劲威 男鞋子潮鞋2020春季新款小白鞋男士鞋学生百搭潮流休闲鞋皮鞋网红韩版板鞋 米沙色【偏小】 41
+        ¥<view class="price-num">{{detail.price_discount}}</view>
+        <view class="price-nodiscount">
+         ¥<view class="price-no">{{skus.price}}</view>
         </view>
       </view>
+      <view class="descript">
+        <view class="descirpt-text">{{detail.descript}}</view>
+          
+        
+      </view>
     </view>
-    <view class="content">
-     富文本区
+    <view class="content" wx:for="{{banner}}" wx:key="index">
+      <image class="banner-img" mode="aspectFill" src="{{item.url}}"></image>
     </view>
-    
+    <view class="fixbar">
+      <view class="fix-cart">
+        <van-icon name="like-o"  size="60rpx" class="icon" hover-class="hover-icon"/>
+        <van-icon hover-class="hover-icon" name="shopping-cart-o" size="60rpx" class="icon" bindtap="handldmovecart"/>
+      </view>
+      <view class="buy">
+        <!-- <view class="add-to-cart buy-button" bindtap="handleaddcart">加入购物车</view> -->
+        <view class="action" class="add-to-cart buy-button" bindtap="handleaddcart">加入购物车
+          <!-- <van-action-sheet show="{{ show }}" title="标题" z-index="1" 
+             bind:close="handleclose">
+            <view  class="skus-container">
+              <view class="header">
+                <view class="skus-image">
+                  <image class="skus-img"></image>
+                </view>
+                <view class="skus-price">
+                  ¥<view class="skus-num">749</view>
+                  <view class="skus-txet"> 耀夜黑，4GB+64GB，官方标配，1个</view>
+                </view>
+                <view class="skus-descript">品种</view>
+                <view class="des-list">
+                  <view class="item">大杯</view>
+                  <view class="item">中杯</view>
+                  <view class="item">小杯</view>
+                </view>
+              </view>
+            </view>
+          </van-action-sheet> -->
+        </view>
+        <van-action-sheet show="{{ show }}" title="标题" z-index="1" 
+            bind:close="handleclose">
+          <view  class="skus-container">
+            <view class="header">
+              <view class="skus-image">
+                <image class="skus-img" mode="aspectFill" src="{{skus.image_url}}"></image>
+              </view>
+              <view class="skus-price">
+                ¥<view class="skus-num">{{skus.price}}</view>
+                <view class="skus-text"> 数量 {{number}} 个</view>
+              </view>
+              
+            </view>
+            <view class="body">
+              <view class="skus-descript">品种</view>
+              <view class="des-list" >
+                <view class="item">大杯</view>
+                <view class="item active">中杯</view>
+                <view class="item">小杯</view>
+              </view>
+              <view class="buy-num">
+                <view class="by-num">数量</view>
+                <van-stepper value="{{ 0 }}" bind:change="handlechange"  step="1"/>
+              </view>
+            </view>
+            <view class="foot">
+              <view class="confirm-button" bindtap="handlesubmit">确认</view>
+            </view>
+          </view>
+        </van-action-sheet>
+        <view class="buy-now buy-button" bindtap="handlebuy">立即购买</view>
+      </view>
+    </view>
   </view>
 </view>

@@ -1,3 +1,7 @@
-{
+{ 
+  "usingComponents": {
+    "van-swipe-cell": "../../miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "van-tag": "../../miniprogram_npm/@vant/weapp/tag/index"
+  },
   "navigationBarTitleText": "地址管理"
 }

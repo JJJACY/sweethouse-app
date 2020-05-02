@@ -1,4 +1,57 @@
 /* pages/cart/cart.js.wxss */
-.cart-list{
+.container{
+  display: block;
+}
+.header{
+  display: flex;
+  height: 100rpx;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+.banner{
+  display: flex;
+  width: 100%;
+}
+.address-text{
+  font-size: 32rpx;
+  color: #000;
+  line-height: 100rpx;
+}
+.cart-list{
+  display: flex;
+  width: 100%;
+  border-bottom: 4rpx solid #f7f7f7;
+}
+.cart-choose{
+  display: flex;
+  align-content: center;
+  margin: 0 20rpx
+}
+.cart-card{
+  margin-right: 20rpx;
+  width: 100%;
+}
+.btn{
+  margin: 10rpx;
+}
+.btn-type{
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background-color: #ffffff;
+  text-align: center;
+}
+.number{
+  width: 80rpx;
+  line-height: 40rpx;
+  background-color: #cccccc;
+  text-align: center;
+}
+.choose{
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
 }

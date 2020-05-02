@@ -1,58 +1,21 @@
 <!--pages/order/order.wxml-->
 <view class="container">
-  <view class="order-list">
-    <view class="order-item" bindtap="handleDetail">
+  <view class="order" wx:for="{{orderData}}" wx:key="index">
+    <view class="order-item" bindtap="handleDetail" data-id="{{item.id}}">
       <view class="order-number">
         订单编号:
-        <view class="number">75038448838</view>
-        
+        <view class="number">{{item.verse}}</view>
       </view>
-      <view class="status">已完成</view>
+      <view class="status">{{item.statu}}</view>
       <view class="image">
         <image class="goods-image" 
           mode="aspectFill"
-          src="http://img5.imgtn.bdimg.com/it/u=1541613205,3775769114&fm=26&gp=0.jpg">
+          src="{{item.image_url}}">
         </image>
       </view>
       <view class="price">
-        <view class="count">总计: 1</view>
-        <view class="price-num">实付金额: ¥199</view>
-      </view>
-    </view>
-    <view class="order-item" bindtap="handleDetail">
-      <view class="order-number">
-        订单编号:
-        <view class="number">75038448838</view>
-        
-      </view>
-      <view class="status">已取消</view>
-      <view class="image">
-        <image class="goods-image" 
-          mode="aspectFill"
-          src="http://img5.imgtn.bdimg.com/it/u=1541613205,3775769114&fm=26&gp=0.jpg">
-        </image>
-      </view>
-      <view class="price">
-        <view class="count">总计: 1</view>
-        <view class="price-num">实付金额: ¥199</view>
-      </view>
-    </view>
-    <view class="order-item" bindtap="handleDetail">
-      <view class="order-number">
-        订单编号:
-        <view class="number">75038448838</view>
-        
-      </view>
-      <view class="status">已下单</view>
-      <view class="image">
-        <image class="goods-image" 
-          mode="aspectFill"
-          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587101855510&di=d8d49c00d3da965248b2039807e58af3&imgtype=0&src=http%3A%2F%2Fimg001.hc360.cn%2Fk3%2FM08%2F1D%2F20%2FwKhQv1e8DUqETG93AAAAAE2PMTk305.jpg">
-        </image>
-      </view>
-      <view class="price">
-        <view class="count">总计: 1</view>
-        <view class="price-num">实付金额: ¥199</view>
+        <view class="count">总计: {{item.count}}</view>
+        <view class="price-num">实付金额: ¥{{item.money}}</view>
       </view>
     </view>
   </view>

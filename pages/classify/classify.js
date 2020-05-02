@@ -1,14 +1,14 @@
 //classify.js
-import API from './../../global/request/api.js'
-const app = getApp()
+import API from './../../global/request/api.js';
+const app = getApp();
 
 Page({
   data: {
     classifyData:[],
     productData:[],
     classifyId: 0,
-    loading: true
-    
+    loading: true,
+    see: false  
   },
   onLoad: function () {
     this.getData()
@@ -26,9 +26,7 @@ Page({
     })
   },
   handleclick(e){
-    console.log(e)
     let id = e.currentTarget.dataset.id;
-    console.log(id)
     wx.request({
       url:API.wxSingleproduct+'/'+id,
       success: res=>{
@@ -36,6 +34,16 @@ Page({
         this.setData({
           productData: res.data.data
         })
+        // console.log(id,this.data.productData[0].classify_id)
+        if( id == this.data.productData[0].classify_id){
+          this.setData({
+            see: false,
+          })
+        }else{
+          this.setData({
+            see: true
+          })
+        }
       },
       fail: err=>{
         console.log(err)
@@ -48,13 +56,13 @@ Page({
         }
       }
     })
-    // this.data.look = true;
-    // console.log(this.data.look)
   },
   handleSingle(e){
     console.log(e)
+    let id = e.currentTarget.dataset.id;
+    console.log(id)
     wx.navigateTo({
-      url:'url:"../../pages/pro/addressEdit"'
+      url:"../../pages/goods/goods?id="+id
     })
   }
 })

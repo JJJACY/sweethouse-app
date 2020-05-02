@@ -1,20 +1,43 @@
 <view class="container">
-  <checkbox-group bindchange="checkboxChange">
+  <view class="notic"  slot="tip">
+    您的收货地址只支持同城送
+  </view>
+  <view class="address-list">
+    <view class="address-item" wx:for="{{addressData}}" wx:key="index">
+      <van-swipe-cell right-width="{{ 100 }}" bind:click="handleclick" data-id="{{item.id}}">
+        <view class="address-detail">
+          <view class="address-top">
+            <view class="address-located">{{item.located}}{{item.descript}}</view>
+            <van-tag type="success" wx:if="{{item.default == 0? true:false}}">默认</van-tag>
+          </view>
+          <view class="address-buttom">
+            <view class="address-phone">{{item.phone}}</view>
+            <view class="address-name">{{item.nickname}}</view>
+          </view>
+        </view>
+        <view class="btn"  slot="right" >
+          <view  class="del-btn" data-id="{{item.id}}" bindtap="handleDelete">删除</view>
+          <view  class="edit-btn" data-id="{{item.id}}" bindtap="handleEdit">编辑</view>  
+        </view>
+      </van-swipe-cell>
+    </view>
+  </view>
+  <!-- <checkbox-group bindchange="checkboxChange">
     <label class="checkbox" wx:for="{{items}}" wx:key="index">
       <checkbox class="box" checked="{{item.checked}}"/>
       <view class="userinfo">
         <view class="info">
-          <view class="username">唐山</view>
-          <view class="usertel">15580888188</view>
+          <view class="username">{{item.name}}</view>
+          <view class="usertel">{{item.phone}}</view>
         </view>
         <view class="useraddress">
           <view class="default" wx:if="{{item.checked}}">默认</view>
-          <view class="address">广东广州市增城区城区增城区健身路文明小区停车场</view>
-          <!-- <view class="edit">编辑</view> -->
+          <view class="address">{{item.descript}}</view>
         </view>
       </view>
       <view class="edit" bindtap="handleEdit">编辑</view>
     </label>
-    <view class="create" bindtap="handleCreate">新增地址</view>
-  </checkbox-group>
+    
+  </checkbox-group> -->
+  <view class="create" bindtap="handleCreate">新增地址</view>
 </view>

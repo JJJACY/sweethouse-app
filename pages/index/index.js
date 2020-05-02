@@ -7,11 +7,24 @@ const app = getApp()
 Page({
   data: {
     bannerData: [],
+    productData:[]
   },
   
   //事件处理函数
   onLoad: function () {
     this.getData()
+    wx.request({
+      url:API.wxProductall,
+      success: res=>{
+        console.log(res.data.data)
+        this.setData({
+          productData: res.data.data
+        })
+      },
+      fail: err=>{
+        console.log(err)
+      }
+    })
   },
   getData(){
     wx.request({

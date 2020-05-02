@@ -1,15 +1,16 @@
 {
-  "pages": [ "pages/classify/classify",
+  "pages": [
     "pages/index/index",
+    "pages/goods/goods",
+    "pages/classify/classify",
     "pages/order/order",
     "pages/orderDetail/orderDetail",
     "pages/cart/cart",
     "pages/address/address",
-   
-    "pages/personal/personal",
-    "pages/addressEdit/addressEdit",
+     "pages/personal/personal",
+    "pages/addressEdit/addressEdit"
     
-    "pages/goods/goods"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
